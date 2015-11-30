@@ -3,4 +3,5 @@ class CCTouchDispatcher : public CCObject
 {
     bool isDispatchEvents(void);
     void setDispatchEvents(bool bDispatchEvents);
+	void addTargetedDelegate(CCTouchDelegate *pDelegate, int nPriority, bool bSwallowsTouches);
 };

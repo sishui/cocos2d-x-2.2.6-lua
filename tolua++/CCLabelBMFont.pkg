@@ -11,9 +11,8 @@ class CCLabelBMFont : public CCSpriteBatchNode
     void setString(const char *label);
 	void setString(const char *label, bool fromUpdate);
     void setCString(const char *label);
-	const char* getString(void) const;
-
-	void setAnchorPoint(const CCPoint & var);
+	const char* getString(void);
+    
 	void setAlignment(CCTextAlignment alignment);
 	void setWidth(float width);
 	void setLineBreakWithoutSpace(bool breakWithoutSpace);
@@ -24,13 +23,13 @@ class CCLabelBMFont : public CCSpriteBatchNode
 	void setFntFile(const char* fntFile);
 	const char* getFntFile();
 
-    void setColor(const Color3B& color);
-    const Color3B& getColor(void) const;
+    void setColor(const ccColor3B& color);
+    const ccColor3B& getColor(void);
 
-    GLubyte getOpacity(void) const;
+    GLubyte getOpacity(void);
     void setOpacity(GLubyte opacity);
 
-	bool isOpacityModifyRGB() const;
+	bool isOpacityModifyRGB();
     void setOpacityModifyRGB(bool isOpacityModifyRGB);
 
     static void purgeCachedData();

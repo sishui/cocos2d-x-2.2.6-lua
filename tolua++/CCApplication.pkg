@@ -23,13 +23,17 @@ enum TargetPlatform
     kTargetIphone,
     kTargetIpad,
     kTargetBlackBerry,
+	kTargetNaCl,
+    kTargetEmscripten,
+    kTargetTizen,
+    kTargetWinRT,
+    kTargetWP8
 };
 
 class CCApplication
 {
     ~CCApplication();
-    
-    static CCApplication* getInstance();
+    static CCApplication* sharedApplication();
     ccLanguageType getCurrentLanguage();
     TargetPlatform getTargetPlatform();
 };

@@ -57,5 +57,5 @@ class CCDirector : public CCObject
 	CCSize getVisibleSize();
     CCPoint getVisibleOrigin();
 
-    static CCDirector* getInstance();
+    static CCDirector* sharedDirector(void);
 };

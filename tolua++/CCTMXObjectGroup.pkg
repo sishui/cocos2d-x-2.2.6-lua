@@ -13,7 +13,7 @@ class CCTMXObjectGroup : public CCObject
     void setGroupName(const char *groupName);
     const char* getGroupName();
 
-    CCString* getProperty(const char* propertyName);
+    CCString *propertyNamed(const char* propertyName);
 
-    CCDictionary* getObject(const char *objectName);
+    CCDictionary* objectNamed(const char *objectName);
 };

@@ -17,8 +17,7 @@ class CCUserDefault
 
 	void flush();
 
-    static CCUserDefault* getInstance();
-    static void destroyInstance();
-
+    static CCUserDefault* sharedUserDefault();
+    static void purgeSharedUserDefault();
     const static std::string& getXMLFilePath();
 };

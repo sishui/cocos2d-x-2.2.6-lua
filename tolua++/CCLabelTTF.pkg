@@ -5,21 +5,21 @@ class CCLabelTTF : public CCSprite
     ~CCLabelTTF();
     bool init();
     void setString(const char *label);
-    const char* getString(void) const;
+    const char* getString(void);
 
-	CCTextAlignment getHorizontalAlignment() const;
+	CCTextAlignment getHorizontalAlignment();
     void setHorizontalAlignment(CCTextAlignment alignment);
 
-    CCVerticalTextAlignment getVerticalAlignment() const;
+    CCVerticalTextAlignment getVerticalAlignment();
     void setVerticalAlignment(CCVerticalTextAlignment verticalAlignment);
 
-    CCSize getDimensions() const;
+    CCSize getDimensions();
     void setDimensions(CCSize &dim);
 
-    float getFontSize() const;
+    float getFontSize();
     void setFontSize(float fontSize);
 
-    const char* getFontName() const;
+    const char* getFontName();
     void setFontName(const char *fontName);
 
     static CCLabelTTF * create(const char *str, const char *fontName, float fontSize, const CCSize& dimensions, CCTextAlignment hAlignment, CCVerticalTextAlignment vAlignment);

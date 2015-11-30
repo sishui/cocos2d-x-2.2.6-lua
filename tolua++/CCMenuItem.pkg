@@ -6,8 +6,11 @@ class CCMenuItem : public CCNodeRGBA
     void selected();
     void unselected();
     void setEnabled(bool enabled);
-    bool isEnabled() const;
-    bool isSelected() const;
+    bool isEnabled();
+    bool isSelected();
+
+    void registerScriptTapHandler(LUA_FUNCTION funcID);
+    void unregisterScriptTapHandler(void);
 };
 
 class CCMenuItemLabel : public CCMenuItem
@@ -16,10 +19,10 @@ class CCMenuItemLabel : public CCMenuItem
 
     void setOpacity(GLubyte opacity);
     GLubyte getOpacity();
-    void setColor(Color3B color);
-    Color3B getColor();
-	void setDisabledColor(const Color3B & color);
-	const Color3B & getDisabledColor();
+    void setColor(ccColor3B color);
+    ccColor3B getColor();
+	void setDisabledColor(const ccColor3B & color);
+	const ccColor3B & getDisabledColor();
 	void setLabel(CCNode* pLabel);
 	CCNode* getLabel();
 
@@ -46,21 +49,21 @@ class CCMenuItemAtlasFont : public CCMenuItemLabel
 class CCMenuItemFont : public CCMenuItemLabel
 {
     static void setFontSize(int s);
-    static unsigned int getFontSize();
+    static unsigned int fontSize();
     static void setFontName(const char* name);
-    static const char* getFontName();
+    static const char* fontName();
 	void setFontSizeObj(unsigned int s);
-    unsigned int getFontSizeObj();
+    unsigned int fontSizeObj();
     void setFontNameObj(const char* name);
-    const char* getFontNameObj() const;
+    const char* fontNameObj();
 
     static CCMenuItemFont * create(const char* value);
 };
 
 class CCMenuItemSprite : public CCMenuItem
 {
-    void setColor(Color3B color);
-    Color3B getColor();
+    void setColor(ccColor3B color);
+    ccColor3B getColor();
     void setOpacity(GLubyte opacity);
     GLubyte getOpacity();
 
@@ -87,8 +90,8 @@ class CCMenuItemSprite : public CCMenuItem
 
 class CCMenuItemImage : public CCMenuItemSprite
 {
-    void setColor(Color3B color);
-    Color3B getColor();
+    void setColor(ccColor3B color);
+    ccColor3B getColor();
     void setOpacity(GLubyte opacity);
     GLubyte getOpacity();
 
@@ -106,8 +109,8 @@ class CCMenuItemImage : public CCMenuItemSprite
 
 class CCMenuItemToggle : public CCMenuItem
 {
-    void setColor(Color3B color);
-    Color3B getColor();
+    void setColor(ccColor3B color);
+    ccColor3B getColor();
     void setOpacity(GLubyte opacity);
     GLubyte getOpacity();
     void setSelectedIndex(unsigned int index);
@@ -116,7 +119,7 @@ class CCMenuItemToggle : public CCMenuItem
     CCArray* getSubItems();
 
     void addSubItem(CCMenuItem *item);
-    CCMenuItem* getSelectedItem();
+    CCMenuItem* selectedItem();
 
     void activate();
     void selected();

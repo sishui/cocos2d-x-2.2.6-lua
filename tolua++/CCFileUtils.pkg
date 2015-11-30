@@ -1,8 +1,8 @@
 
 class CCFileUtils
 {
-    static CCFileUtils* getInstance();
-    static void destroyInstance();
+    static CCFileUtils* sharedFileUtils();
+    static void purgeFileUtils();
     
     void purgeCachedEntries();
 
